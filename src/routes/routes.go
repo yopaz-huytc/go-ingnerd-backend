@@ -2,7 +2,7 @@ package routes
 
 import (
     "github.com/gin-gonic/gin"
-    "github.com/yopaz-huytc/go-ingnerd-backend/src/controller"
+    "github.com/yopaz-huytc/go-ingnerd-backend/src/controllers"
 )
 
 // Routes is a function that defines all the routes of the application

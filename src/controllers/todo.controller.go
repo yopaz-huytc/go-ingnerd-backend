@@ -66,8 +66,7 @@ func GetAllTodos(context *gin.Context) {
     context.JSON(http.StatusOK, gin.H{
         "status" : "200",
         "message": "Success",
-        "data": todos
-    })
+        "data": todos})
 }
 
 func UpdateTodo (context *gin.Context) {
@@ -105,8 +104,8 @@ func DeleteTodo (context *gin.Context) {
     reqParamId := context.Param("idTodo")
     idTodo := cast.ToUint(reqParamId)
     // Querying to delete todo data by id
-    todoById := db.Where("id = ?", idTodo).Unscoped().Delete(&todo)
-    fmt.Println(delete)
+    result := db.Where("id = ?", idTodo).Unscoped().Delete(&todo)
+    fmt.Println(result) // print the result of the Delete operation
     // Creating http response
     context.JSON(http.StatusOK, gin.H{
         "status": "200",

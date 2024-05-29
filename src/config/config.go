@@ -10,7 +10,7 @@ import (
 )
 
 // DB is a global variable that holds the connection to the database
-func ConectDB() *gorm.DB {
+func ConnectDB() *gorm.DB {
     errorENV := godotenv.Load()
     if errorENV != nil {
         panic("Error loading .env file")
